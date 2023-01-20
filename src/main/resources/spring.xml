@@ -3,13 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="alien" class="org.example.kapil.Alien">
-    <!--<property name="age" value="20" />
-    <property ref="laptop"  name="laptop"/>-->
-    <constructor-arg value="30"/>
-    <constructor-arg ref="laptop"/>
+<!--<bean id="alien" class="org.example.kapil.Alien" autowire="byType" scope="singleton">-->
+<bean id="alien" class="org.example.kapil.Alien" autowire="byType" scope="prototype">
+    <property name="age" value="20" />
+    <!--<property ref="laptop"  name="laptop"/>-->
+    <!--<constructor-arg value="30"/>
+    <constructor-arg ref="laptop"/>-->
 </bean>
 
-    <bean id="laptop" class="org.example.kapil.Laptop"/>
+    <bean id="laptop" class="org.example.kapil.Laptop" primary="true"/>
 
 </beans>
